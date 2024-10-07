@@ -1,71 +1,17 @@
-  :root {
-  font-size: 16px;
-  font-size: 16px;
-  font-family: 'Open Sans';
-  --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
-  --transition-speed: 600ms;
- }
-body {
-   color: black;
-   background-color: white;
-   margin 0;
-   padding: 0;
- }
-main {
-  margin-left: 5rem;
-  
-
-.navbar {
-    width: 200px;
-    background-color: #333;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-    transition: width 0.3s;
+h1{
+  text-align: center;
+}
+.navbar ul{
+  list-style-type: none;
+  background-color: #000000;
+  padding: 0px;
+  margin: 0px; 
+}
+.navbar a{
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
 }
 
-.navbar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.navbar li {
-    position: relative;
-}
-
-.navbar a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.navbar a:hover {
-    background: #575757;
-    transform: translateX(10px);
-}
-
-.navbar a::before {
-    content: '';
-    position: absolute;
-    width: 4px;
-    height: 100%;
-    left: -4px;
-    top: 0;
-    background: transparent;
-    transition: background 0.3s;
-}
-
-.navbar a:hover::before {
-    background: #ff4757;
-}
-
-@media (max-width: 600px) {
-    .navbar {
-        width: 150px;
-    }
-}
