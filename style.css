@@ -1,26 +1,45 @@
-h1{
+.topnav {
+  background-color: #28296c;
+  overflow: hidden;
+  max-width:100%
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
   text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 30px;
+}
+.topnav button { 
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 30px;
+  background-color: #28296c;
+  border: none;
+  
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: black;
+  color: #f2f2f2;
+}
+.topnav button:hover {
+  background-color: black;
+  color: #f2f2f2;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #e22e05c0;
+  color: white;
 }
 body{
   margin: 0px;
-}
-.navbar ul{
-  list-style-type: none;
-  background-color: #000000;
-  padding: 0px;
-  margin: 0px; 
-  overflow: hidden;
-}
-.navbar a{
-  color: white;
-  text-decoration: none;
-  padding: 15px;
-  display: block;
-  text-align: center;
-}
-.navbar a:hover{
-  background-color: #ADD8E6;
-}
-.navbar li{
-  float:left;
 }
