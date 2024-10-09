@@ -60,6 +60,23 @@
   font-family: Verdana;
   font-size: 20px
 }
+.citation {
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.bracketed-list {
+  list-style: none;
+  counter-reset: item;
+  font-size: 30px
+}
+
+.bracketed-list li:before {
+  content: "[" counter(item) "]";
+  counter-increment: item;
+  margin-right: 0.5em; /* Adjust the spacing as needed */
+}
 .one {
   margin-left: 9%;
   background-color: white;
