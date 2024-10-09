@@ -13,6 +13,12 @@
   text-decoration: none;
   font-size: 30px;
 }
+.title {
+  text-align: center;
+  font-family: Verdana;
+}
+.titlebox {
+}
 .topnav button { 
   float: left;
   color: #f2f2f2;
@@ -23,6 +29,44 @@
   background-color: #28296c;
   border: none;
   
+}
+.medium_pic{
+  padding-left: 30px;
+  width: 600px;
+  height: 600px;
+  border-radius: 10%;
+
+}
+.title2{
+  text-align: center;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5% 5%;
+  
+}
+.medium {
+  text-align: left;
+  font-family: Verdana;
+  font-size: 20px
+}
+.one {
+  background-color: white;
+  border-radius: 25px;
+  border: 2px solid #28296c;
+  padding: 10px 20px;
+}
+.two {
+  padding-left: 15%;
+}
+.box {
+  width: 50%; /* Adjust width as needed */
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #000;
 }
 
 /* Change the color of links on hover */
@@ -38,8 +82,9 @@
 /* Add a color to the active/current link */
 .topnav a.active {
   background-color: #e22e05c0;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 body{
   margin: 0px;
+  background-color: #e7e2f1c0;
 }
