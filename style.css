@@ -48,16 +48,25 @@
   padding: 5% 5%;
   
 }
+.container1 {
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 1fr ;
+  padding-top: 5%;
+  
+}
 .medium {
   text-align: left;
   font-family: Verdana;
   font-size: 20px
 }
 .one {
+  margin-left: 9%;
   background-color: white;
   border-radius: 25px;
   border: 2px solid #28296c;
-  padding: 10px 20px;
+  padding: 20px 20px;
+  width: 80%;
 }
 .two {
   padding-left: 15%;
