@@ -48,12 +48,9 @@
   padding: 5% 5%;
   
 }
-.container1 {
-  justify-items: center;
-  display: grid;
-  grid-template-columns: 1fr ;
-  padding-top: 5%;
-  
+.container2 {
+  justify-items: center;  
+  background-color: antiquewhite;
 }
 .medium {
   text-align: left;
@@ -85,6 +82,21 @@
   padding: 20px 20px;
   width: 80%;
 }
+.construct {
+  font-size x-large;
+  color: red;
+  text-align: center;
+}
+.three {
+  margin-top: 1%;
+  margin-left: 1%;
+  background-color: white;
+  border-radius: 25px;
+  border: 2px solid #28296c;
+  padding: 0px 20px;
+  padding-bottom: 10px;
+  width: 95%;
+}
 .two {
   padding-left: 15%;
 }
@@ -94,7 +106,32 @@
   box-sizing: border-box;
   border: 1px solid #000;
 }
+ample
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
 
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: black;
