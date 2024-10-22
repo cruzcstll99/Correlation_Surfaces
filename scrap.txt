@@ -1,0 +1,8 @@
+<div class = "one">
+    <h2 class = "title2"></h2>
+</div>
+<div class="two">
+    <img class = "medium_pic2" src="">
+    <div class ="button_container"><p class = "large" id = "pcs_text">Current L function: ζ(s)</p>
+    <button onclick ="switchImage()" class = 'styled-button' >Change \(L\) function</button></div>
+</div>

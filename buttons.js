@@ -1,0 +1,46 @@
+function changeImage()
+{
+    var img = document.getElementById('Avg');
+    img.scr = '\Images\S_av_Delta_plot.png'
+}
+let cur_av_image =0;
+const av_images =['\Images\ave\S_av_plot.png','\Images\ave\S_av_Delta_plot.png']
+function switch_avg_Image() {
+    currentImage = (cur_av_image + 1) % av_images.length;
+    document.getElementById('Avg').src = images[currentImage];
+}
+let currentavgImage = 0;
+const images = ['Images/S_av_plot.png', 'Images/S_av_Delta_plot.png','Images/S_av_E_plot.png'];
+
+const L_funcs = ['Current L function: ζ(s)', 'Current L function: L(s,Δ)','Current L function: L(s,E)']
+
+function switchavgImage() {
+    currentavgImage = (currentavgImage + 1) % images.length;
+    document.getElementById('Avg').src = images[currentavgImage];
+    document.getElementById('av_text').innerHTML = L_funcs[currentavgImage];
+}
+
+const SDimages = ['Images/SD_zeta.png','Images/SD_Delta.png', 'Images/SD_E.png' ];
+let currentSDImage =0;
+
+function switchSDImage() {
+    currentSDImage = (currentSDImage + 1) % SDimages.length;
+    document.getElementById('SD').src = SDimages[currentSDImage];
+    document.getElementById('SD_text').innerHTML = L_funcs[currentSDImage];
+}
+
+const pcsgifs = ['Images/PCS_zeta.gif','Images/PCS_delta.gif','Images/PCS_E.gif'];
+let currpcsgif = 0;
+function switchPCSImage() {
+    currpcsgif = (currpcsgif + 1) % pcsgifs.length;
+    document.getElementById('PCS').src = pcsgifs[currpcsgif];
+    document.getElementById('pcs_text').innerHTML = L_funcs[currpcsgif];
+
+}
+const tracepdfs = ['Images/half_zeta.png','Images/half_delta.png','Images/half_E.png']
+let currenttraceImage  =0;
+function switchtraceImage() {
+    currenttraceImage = (currenttraceImage + 1) % tracepdfs.length;
+    document.getElementById('trace').src = tracepdfs[currenttraceImage];
+    document.getElementById('trace_text').innerHTML = L_funcs[currenttraceImage];
+}

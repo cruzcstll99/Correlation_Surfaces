@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <script type="text/javascript"
-      src="LaTeXMathML.js">
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
     </script>
   </head>
   <body>
@@ -28,18 +28,100 @@
     <div class="three"> 
       Things to do 
       <ul>
-        <li> Put in Mean picture for Zeta with text on the left</li>
-        <li> Put in the Mean pictures of the GL2 above and text on the bottom with Zaharescu and Murty citation. </li>
-        <li> Put in picture of standard with asymptote and how it changes over time for zeta with text on the bottom.</li>
-        <li> Put in the picture of the standard deviations for GL2</li>
+        <li> Description of Mean pic with Zaharescu and Murty ref</li>
+        <li> Put in picture of standard with asymptote.</li>
+        <li> Put in picture of Standard deviation changin over time </li>
         <li> Put in picture of cdf of zeta with alpha = .5 and the difference</li>
         <li> Put in picture cdf of GL2</li>
         <li> Put in picture of pdfs when alpha =.5</li>
         <li> Put in a gif of the data from zeta when alpha is larger than .2</li>
         <li> Put in a gif of the conjectured surface</li>
-        <li> Picture of Delta and E </li>
-        <li> Picture of small alpha</li>
+        <li> Gif of small alpha</li>
       </ul>
     </div>
+    
+    <div class = "container">
+      <!-- Plots of F(m alpha, T) -->
+      <div class = "one">
+        <h2 class = "title2">Plots of \(F(m\alpha, T)\)</h2>
+        <div class ="button_container"><p class = "large" id = "av_text">Current L function: ζ(s)</p><button onclick ="switchavgImage()" class = 'styled-button' >Change \(L\) function</button></div>
+        </div>
+        <div class="two">
+          <img class = "medium_pic2" id = 'Avg' src="Images/S_av_plot.png">
+        </div>
+
+
+        <div class = "one">
+          <h2 class = "title2">Plots of \(\mathcal{S}_{SD}(m\alpha, T)\)</h2>
+          <div class ="button_container"><p class = "large" id = "SD_text">Current L function: ζ(s)</p><button onclick ="switchSDImage()" class = 'styled-button' >Change \(L\) function</button></div>
+          </div>
+          <div class="two">
+            <img class = "medium_pic2" id = 'SD' src='Images/SD_zeta.png'>
+          </div>
+          
+        <!-- Discrete approx of PCS -->
+          <div class="one"> 
+            <h2 class = "title2">Discrete approximations of the PCS </h2>
+            <div class ="button_container"><p class = "large" id = "pcs_text">Current L function: ζ(s)</p><button onclick ="switchPCSImage()" class = 'styled-button' >Change \(L\) function</button></div>
+            <p class="medium">This website is the data companion to the paper <a href ="">Surfaces Associated to Zeros of Automorphic L-functions</a><a class="citation" href ="ref.html">[1]</a> by Debmayla Basak, Cruz Castillo and Alexandru Zaharescu. 
+              <br>
+              <br> In this website, you will find a description of our data, visualizations related to pair and triple correlation of the zeros of certain $L$-functions, and tables of moments.  Simply click on the corresponding tab above to see the data. For example, to the left is an animation of the discrete approximation of the Pair Correlation Surface.
+              <br>
+              <br> For example, see a discrete approximation of the Pair Correlation Surface to the left.
+              Our data makes heavy use of the zeros of $\zeta$ found on <a href = "https://www.lmfdb.org/zeros/zeta/">LMFDB</a><a class="citation" href ="ref.html">[2]</a> which were computed by Platt <a class = "citation" href="ref.html">[3]</a>. For the other $L$-functions, we required the use of Rubinstein's \(L\)-function calculator <a href ="https://github.com/agrawroh/l-calc">lcalc</a><a class="citation" href = "ref.html">[4]</a>. 
+              <br><br>
+             
+              </a>
+            </p>
+    
+          </div>
+          <div class="two">
+            <img class = "medium_pic" id = 'PCS' src="Images/PCS_zeta.gif">
+          </div>
+          <!-- Traces of  PCS-->
+          <div class="one"> 
+            <h2 class = "title2">The trace of the PCS at \(\alpha=1/2\) </h2>
+            <div class ="button_container"><p class = "large" id = "trace_text">Current L function: ζ(s)</p><button onclick ="switchtraceImage()" class = 'styled-button' >Change \(L\) function</button></div>
+            <p class="medium">This website is the data companion to the paper <a href ="">Surfaces Associated to Zeros of Automorphic L-functions</a><a class="citation" href ="ref.html">[1]</a> by Debmayla Basak, Cruz Castillo and Alexandru Zaharescu. 
+              <br>
+              <br> In this website, you will find a description of our data, visualizations related to pair and triple correlation of the zeros of certain $L$-functions, and tables of moments.  Simply click on the corresponding tab above to see the data. For example, to the left is an animation of the discrete approximation of the Pair Correlation Surface.
+              <br>
+              <br> For example, see a discrete approximation of the Pair Correlation Surface to the left.
+              Our data makes heavy use of the zeros of $\zeta$ found on <a href = "https://www.lmfdb.org/zeros/zeta/">LMFDB</a><a class="citation" href ="ref.html">[2]</a> which were computed by Platt <a class = "citation" href="ref.html">[3]</a>. For the other $L$-functions, we required the use of Rubinstein's \(L\)-function calculator <a href ="https://github.com/agrawroh/l-calc">lcalc</a><a class="citation" href = "ref.html">[4]</a>. 
+              <br><br>
+             
+              </a>
+            </p>
+    
+          </div>
+          <div class="two">
+            <img class = "medium_pic" id = 'trace' src="">
+          </div>
+
+          <!-- The PCS -->
+          <div class="one"> 
+            <h2 class = 'title2'> The Pair Corrrelation Surface (PCS)</h2>
+            
+    
+          </div>
+          <div class="two">
+            <img class = "medium_pic" id = 'PCS' src="\Images\E_gif_pls_1.gif">
+          </div>
+
+          <!--Small alpha of  PCS -->
+          <div class="one"> 
+            <h2 class = "title2">Distortion to the PCS </h2>
+            <div class ="button_container"><p class = "large" id = "smallpcs_text">Current L function: ζ(s)</p><button onclick ="switchsmallPCSImage()" class = 'styled-button' >Change \(L\) function</button></div>
+           
+             
+              </a>
+            </p>
+    
+          </div>
+          <div class="two">
+            <img class = "medium_pic" id = 'smallPCS' src="\Images\E_gif_pls_1.gif">
+          </div>
+    </div>
+    <script src = "buttons.js"></script>
    </main>
 </html>
