@@ -44,3 +44,11 @@ function switchtraceImage() {
     document.getElementById('trace').src = tracepdfs[currenttraceImage];
     document.getElementById('trace_text').innerHTML = L_funcs[currenttraceImage];
 }
+
+const smallpcs = ['Images/Distortion_zeta.png','Images/Distortion_Delta.png','Images/Distortion_E.png']
+let currentPCSImage  =0;
+function switchsmallpcsImage() {
+    currentPCSImage = (currentPCSImage + 1) % smallpcs.length;
+    document.getElementById('smallPCS').src = smallpcs[currentPCSImage];
+    document.getElementById("smallpcs_text").innerHTML = L_funcs[currentPCSImage];
+}

@@ -43,9 +43,24 @@
     <div class = "container">
       <!-- Plots of F(m alpha, T) -->
       <div class = "one">
-        <h2 class = "title2">Plots of \(F(m\alpha, T)\)</h2>
-        <div class ="button_container"><p class = "large" id = "av_text">Current L function: ζ(s)</p><button onclick ="switchavgImage()" class = 'styled-button' >Change \(L\) function</button></div>
-        </div>
+        <h2 class = "title2">Plots of \(S_{\mathrm{av},\pi}(m\alpha, T)\)</h2>
+        <p>Before dicussing our plots, we recall a conjecture from Murty and Zaharescu <a class="citation" href="ref.html">[4]</a> 
+        <p class = "thmtitles">Conjecture(Murty and Zaharescu, 2002).</p>
+        <p class = "thmtext">
+        For any \(\pi \in \mathscr{A}_m,\) as \(T \to \infty,\) one has 
+        \begin{align*}
+            F_{\pi}(m\alpha) = \begin{cases}|\alpha|+m T^{-2|\alpha| m} \log T(1+o(1))+o(1) & \text { if }|\alpha| \leqslant 1, \\ 1+o(1) & \text { if }|\alpha| \geqslant 1.\end{cases}
+        \end{align*}
+      </p>
+      Now, we compare our data to the conjecture above. To the right, we have a box that when the button called "Change L function " is pressed will give the plots of \(F(m \alpha,T)\)
+        The first plot is a graph of \(\mathcal{S}_{\text{av}}(T^{\alpha},T)\) for \(T = \Im \rho_{10^6}\approx 600269\) with \(\alpha\) varying uniformly in \((.06,3].\)  
+          For this height \(,T,\) the numerics strongly align with Montgomery's theorem  and heuristic. 
+          In particular, we see that our data reflects the observation made in regards to Theorem~\ref{main thm}. 
+          We find $\mathcal{S}_{\text{av}}(T^{\alpha},T)$ goes from decreasing to increasing at $\alpha = .2.$ 
+          Moreover, the critical point of the right-hand side of \eqref{Montgomery's Result} occurs at approximately $.22$ for our choice of $T.$ 
+          Finally, \autoref{fig:mean_GL2} tells us that the means corresponding to $L(s,\Delta)$ and $L(s,E)$ behave as expected for $\text{GL}_2$ $L$-functions; see Lemma~\ref{S_av to Mean} and \cite[Eq.(2.4)]{murtyExplicitFormulasPair2002}.</p>
+          <div class ="button_container"><p class = "large" id = "av_text">Current L function: ζ(s)</p><button onclick ="switchavgImage()" class = 'styled-button' >Change \(L\) function</button></div>
+      </div>
         <div class="two">
           <img class = "medium_pic2" id = 'Avg' src="Images/S_av_plot.png">
         </div>
@@ -95,7 +110,7 @@
     
           </div>
           <div class="two">
-            <img class = "medium_pic" id = 'trace' src="">
+            <img class = "medium_pic" id = 'trace' src="Images/half_zeta.png">
           </div>
 
           <!-- The PCS -->
@@ -105,13 +120,13 @@
     
           </div>
           <div class="two">
-            <img class = "medium_pic" id = 'PCS' src="\Images\E_gif_pls_1.gif">
+            <img class = "medium_pic" id = 'PCS' src="Images/PCS.gif">
           </div>
 
           <!--Small alpha of  PCS -->
           <div class="one"> 
             <h2 class = "title2">Distortion to the PCS </h2>
-            <div class ="button_container"><p class = "large" id = "smallpcs_text">Current L function: ζ(s)</p><button onclick ="switchsmallPCSImage()" class = 'styled-button' >Change \(L\) function</button></div>
+            <div class ="button_container"><p class = "large" id = "smallpcs_text">Current L function: ζ(s)</p><button onclick =" switchsmallpcsImage()" class = 'styled-button' >Change \(L\) function</button></div>
            
              
               </a>
@@ -119,7 +134,7 @@
     
           </div>
           <div class="two">
-            <img class = "medium_pic" id = 'smallPCS' src="\Images\E_gif_pls_1.gif">
+            <img class = "medium_pic" id = 'smallPCS' src="Images/Distortion_zeta.png">
           </div>
     </div>
     <script src = "buttons.js"></script>

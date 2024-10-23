@@ -89,6 +89,16 @@
   text-decoration: none;
   color: inherit;
 }
+.thmtitles{
+  text-align:left;
+  font-family: Verdana;
+  font-weight: bold;
+}
+.thmtext{
+  text-align:left;
+  font-family: Verdana;
+  font-style: italic;
+}
 
 .bracketed-list {
   list-style: none;
