@@ -33,12 +33,13 @@
         <div class ="button_container"><p class = "large" id = "L_text">Current L function: ζ(s)</p><button onclick ="switchL()" class = 'styled-button' >Change \(L\) function</button></div> </p>
         <p class = 'medium'>
        Clicking the button changes the visualizations to the that of the \(L\)-function that is listed. For example, above when you click the button it will change the \(L\)-function after "Current L function:".
-        </div>p>
+        
+        </p></div>
     </div>
-    
+  
     <div class = "container">
       <!-- Plots of F(m alpha, T) -->
-      <div class = "one" id ="Avg">
+      <div class = "one" id ="Mean">
         <h2 class = "title2">Plots of \(\mathcal{S}_{\mathrm{av},\pi}(T^{m\alpha}, T)\)</h2>
         <p class ="medium"> As a point of reference, we include a reformulation of a conjecture from Murty and Zaharescu <a class="citation" href="ref.html">[5]</a> for automorphic \(L\)-functions. 
           Let \(\mathscr{A}_m\) be the set of irreducible cuspidal automorphic representations of representations of
@@ -55,13 +56,15 @@
             small  \(S_{\pi,\mathrm{av}}\) to behave linearly and then flatline for \(|\alpha| \geq 1\). For \(\alpha\) small the denominating term is second term of the first case above. 
             When \(L(s,\pi) = \zeta(s)\) and \(T\) is the millionth zero of \(\zeta\)(\(\approx 600,270\)) this change of main term seems to happen around \(.2\) which can be seen in the graph. 
             As expected, Montgomery's Theorem and heuristic approximates the behavior of \(S_{\textrm{av}}\) very well <a class = "citation">[5]</a>. The same can be said for the other \(\mathrm{GL}_2\) \(L\)-functions. 
-          <br>
+           <br>
+           <div class ="button_container"><p class = "large" id = "av_text">Current L function: ζ(s)</p><button onclick ="switchavImage()" class = 'styled-button' >Change \(L\) function</button></div>
           
-      <div class ="button_container"><p class = "large" id = "av_text">Current L function: ζ(s)</p><button onclick ="switchavgImage()" class = 'styled-button' >Change \(L\) function</button></div>
+      
       </div>
         <div class="two">
-          <img class = "large_pic" id = 'Avg' src="Images/S_av_plot.png">
+          <img class = "large_pic" id = 'Average' src="Images/S_av_plot.png">
         </div>
+    
 <!-- Discrete approx of PCS -->
 <div class="one"> 
   <h2 class = "title2">Discrete approximations of the Pair Correlation Surface(PCS) </h2>
@@ -88,7 +91,7 @@
 
 </div>
 <div class="two">
-  <img class = "large_pic" id = 'PCS_dis' src="Images/PCS_zeta.gif">
+  <img class = "large_pic" id = 'PCS' src="Images/PCS_zeta.gif">
 </div>
  <!-- Traces of  PCS-->
  <div class="one" id = "tra"> 
@@ -155,7 +158,7 @@
 
 <!--SD -->
        
-    
+
     <script src = "buttons.js"></script>
    </main>
 </html>
