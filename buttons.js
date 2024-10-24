@@ -52,3 +52,8 @@ function switchsmallpcsImage() {
     document.getElementById('smallPCS').src = smallpcs[currentPCSImage];
     document.getElementById("smallpcs_text").innerHTML = L_funcs[currentPCSImage];
 }
+let currrentLfunc = 0;
+function switchL() {
+    currrentLfunc = (currrentLfunc + 1) % L_funcs.length;
+    document.getElementById("L_text").innerHTML = L_funcs[currrentLfunc]
+}

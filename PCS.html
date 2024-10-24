@@ -25,118 +25,137 @@
      
    </div>
    <main>
-    <div class="three"> 
-      Things to do 
-      <ul>
-        <li> Description of Mean pic with Zaharescu and Murty ref</li>
-        <li> Put in picture of standard with asymptote.</li>
-        <li> Put in picture of Standard deviation changin over time </li>
-        <li> Put in picture of cdf of zeta with alpha = .5 and the difference</li>
-        <li> Put in picture cdf of GL2</li>
-        <li> Put in picture of pdfs when alpha =.5</li>
-        <li> Put in a gif of the data from zeta when alpha is larger than .2</li>
-        <li> Put in a gif of the conjectured surface</li>
-        <li> Gif of small alpha</li>
-      </ul>
+    <div class="five"> 
+      <h2 class = 'title2'>Tutorial</h2>
+      <p class = 'medium'>Below, you shall find various data visualizations generated from the zeros of \(\zeta,L(s,\Delta)\) and \(L(s,E)\). 
+        For the majority of the boxes below, you will find the following button.
+      </p>
+        <div class ="button_container"><p class = "large" id = "L_text">Current L function: ζ(s)</p><button onclick ="switchL()" class = 'styled-button' >Change \(L\) function</button></div> </p>
+        <p class = 'medium'>
+       Clicking the button changes the visualizations to the that of the \(L\)-function that is listed. For example, above when you click the button it will change the \(L\)-function after "Current L function:".
+        </div>p>
     </div>
     
     <div class = "container">
       <!-- Plots of F(m alpha, T) -->
-      <div class = "one">
-        <h2 class = "title2">Plots of \(S_{\mathrm{av},\pi}(m\alpha, T)\)</h2>
-        <p>Before dicussing our plots, we recall a conjecture from Murty and Zaharescu <a class="citation" href="ref.html">[4]</a> 
-        <p class = "thmtitles">Conjecture(Murty and Zaharescu, 2002).</p>
-        <p class = "thmtext">
-        For any \(\pi \in \mathscr{A}_m,\) as \(T \to \infty,\) one has 
-        \begin{align*}
-            F_{\pi}(m\alpha) = \begin{cases}|\alpha|+m T^{-2|\alpha| m} \log T(1+o(1))+o(1) & \text { if }|\alpha| \leqslant 1, \\ 1+o(1) & \text { if }|\alpha| \geqslant 1.\end{cases}
-        \end{align*}
-      </p>
-      Now, we compare our data to the conjecture above. To the right, we have a box that when the button called "Change L function " is pressed will give the plots of \(F(m \alpha,T)\)
-        The first plot is a graph of \(\mathcal{S}_{\text{av}}(T^{\alpha},T)\) for \(T = \Im \rho_{10^6}\approx 600269\) with \(\alpha\) varying uniformly in \((.06,3].\)  
-          For this height \(,T,\) the numerics strongly align with Montgomery's theorem  and heuristic. 
-          In particular, we see that our data reflects the observation made in regards to Theorem~\ref{main thm}. 
-          We find $\mathcal{S}_{\text{av}}(T^{\alpha},T)$ goes from decreasing to increasing at $\alpha = .2.$ 
-          Moreover, the critical point of the right-hand side of \eqref{Montgomery's Result} occurs at approximately $.22$ for our choice of $T.$ 
-          Finally, \autoref{fig:mean_GL2} tells us that the means corresponding to $L(s,\Delta)$ and $L(s,E)$ behave as expected for $\text{GL}_2$ $L$-functions; see Lemma~\ref{S_av to Mean} and \cite[Eq.(2.4)]{murtyExplicitFormulasPair2002}.</p>
-          <div class ="button_container"><p class = "large" id = "av_text">Current L function: ζ(s)</p><button onclick ="switchavgImage()" class = 'styled-button' >Change \(L\) function</button></div>
+      <div class = "one" id ="Avg">
+        <h2 class = "title2">Plots of \(\mathcal{S}_{\mathrm{av},\pi}(T^{m\alpha}, T)\)</h2>
+        <p class ="medium"> As a point of reference, we include a reformulation of a conjecture from Murty and Zaharescu <a class="citation" href="ref.html">[5]</a> for automorphic \(L\)-functions. 
+          Let \(\mathscr{A}_m\) be the set of irreducible cuspidal automorphic representations of representations of
+          \(\mathrm{GL}_m\) over \(\mathbb{Q}\) with unitary central character.  This conjecture follows for small \(\alpha\) by the work of Rudnick and Sarnak <a class="citation" href.html>[7].</a>  
+        </p>
+          <p class = "thmtitles">Conjecture(Murty and Zaharescu, 2002). </p>
+          <p class = "thmtext">
+            For any \(\pi \in \mathscr{A}_m,\) as \(T \to \infty,\) one has 
+            \begin{align*}
+                \mathcal{S}_{\pi,\mathrm{av}}(T^{m\alpha},T) = \begin{cases}|\alpha|+m T^{-2|\alpha| m} \log T(1+o(1))+o(1) & \text { if }|\alpha| \leqslant 1, \\ 1+o(1) & \text { if }|\alpha| \geqslant 1.\end{cases}
+            \end{align*}
+          </p>
+          <p class = 'medium'>From this conjecture, we expect that for \(\alpha\) not too 
+            small  \(S_{\pi,\mathrm{av}}\) to behave linearly and then flatline for \(|\alpha| \geq 1\). For \(\alpha\) small the denominating term is second term of the first case above. 
+            When \(L(s,\pi) = \zeta(s)\) and \(T\) is the millionth zero of \(\zeta\)(\(\approx 600,270\)) this change of main term seems to happen around \(.2\) which can be seen in the graph. 
+            As expected, Montgomery's Theorem and heuristic approximates the behavior of \(S_{\textrm{av}}\) very well <a class = "citation">[5]</a>. The same can be said for the other \(\mathrm{GL}_2\) \(L\)-functions. 
+          <br>
+          
+      <div class ="button_container"><p class = "large" id = "av_text">Current L function: ζ(s)</p><button onclick ="switchavgImage()" class = 'styled-button' >Change \(L\) function</button></div>
       </div>
         <div class="two">
-          <img class = "medium_pic2" id = 'Avg' src="Images/S_av_plot.png">
+          <img class = "large_pic" id = 'Avg' src="Images/S_av_plot.png">
         </div>
+<!-- Discrete approx of PCS -->
+<div class="one"> 
+  <h2 class = "title2">Discrete approximations of the Pair Correlation Surface(PCS) </h2>
+  <p class="medium">
+   In the box to the right, we present animations of the discrete approximations of the PCS generated from the first million zeros of \(\zeta(s),L(s,\Delta)\)and \(L(s,E).\) 
+   In each animation, we take \(.2 \leq |\alpha| \leq 3 \) for smaller \(\alpha\) see the box <a href="PCS.html#dis">Distortion to the PCS</a>. 
+   <br>
+   <br>
+  The animations have three dimensions: the \(\alpha\) dimension, the \(\lambda\) dimension, and the dimension corresponding to the approximation of probability distribution function associated to 
+   \begin{align*} \left\{ \mathcal{S}_{\pi} (\gamma_{\pi},T^{m\alpha},T): |\gamma_{\pi}| \leq T \hspace{.5em}  \mathrm{ and } \hspace{.5em} L\Big(\frac{1}{2}+i\gamma_{\pi}\Big) =0 \right\} \end{align*} 
+   with \(T\) being the ordinate of the millionth zero of \(L(s,\pi).\) 
+   For each fixed \(\alpha,\) we compute 500 histograms for the set above
+  normalized to have mean zero and standard deviation one. 
+   We use \(\lambda\) to denote the bin location. 
+   For a cleaner presentation, we delete the extreme outliers of this set, which corresponds to one percent of the data. 
+   Combining all the \(\alpha\) traces, we create the animations to the left. 
+   Examples of the \(\alpha\) traces are displayed in the box <b> <a href="PCS.html#tra" > The trace of PCS at \(\alpha = 1/2\).</a> </b>
+   <br>
+   <br>
+   Finally, we invite the reader to compare these animations to the animation found in the box <b><a href="PCS.html#pcs">The Pair Correlation Surface(PCS).</a></b>
+  </p>
+  <div class ="button_container"><p class = "large" id = "pcs_text">Current L function: ζ(s)</p><button onclick ="switchPCSImage()" class = 'styled-button' >Change \(L\) function</button></div>
+ 
+
+</div>
+<div class="two">
+  <img class = "large_pic" id = 'PCS_dis' src="Images/PCS_zeta.gif">
+</div>
+ <!-- Traces of  PCS-->
+ <div class="one" id = "tra"> 
+  <h2 class = "title2">The trace of the PCS at \(\alpha=\frac{1}{2}\) </h2>
+  
+  <p class="medium"> To the right, are \(\alpha\) traces of the discrete approximations of the PCS when \(\alpha = \frac{1}{2}.\) Explicity, they are the plots of 500 density histograms generated from 
+    \begin{align*} \left\{ \mathcal{S}_{\pi} (\gamma_{\pi},T^{\frac{m}{2}},T): |\gamma_{\pi}| \leq T \hspace{.5em}  \mathrm{ and } \hspace{.5em} L\Big(\frac{1}{2}+i\gamma_{\pi}\Big) =0 \right\} \end{align*} 
+   with \(T\) being the ordinate of the millionth zero of \(L(s,\pi).\) We also plot the gaussian probability distribution function in red. 
+    
+   
+    </a>
+  </p>
+  <div class ="button_container"><p class = "large" id = "trace_text">Current L function: ζ(s)</p><button onclick ="switchtraceImage()" class = 'styled-button' >Change \(L\) function</button></div>
+</div>
+<div class="two">
+  <img class = "medium_pic" id = 'trace' src="Images/half_zeta.png">
+</div>
 
 
-        <div class = "one">
-          <h2 class = "title2">Plots of \(\mathcal{S}_{SD}(m\alpha, T)\)</h2>
-          <div class ="button_container"><p class = "large" id = "SD_text">Current L function: ζ(s)</p><button onclick ="switchSDImage()" class = 'styled-button' >Change \(L\) function</button></div>
-          </div>
-          <div class="two">
-            <img class = "medium_pic2" id = 'SD' src='Images/SD_zeta.png'>
-          </div>
-          
-        <!-- Discrete approx of PCS -->
-          <div class="one"> 
-            <h2 class = "title2">Discrete approximations of the PCS </h2>
-            <div class ="button_container"><p class = "large" id = "pcs_text">Current L function: ζ(s)</p><button onclick ="switchPCSImage()" class = 'styled-button' >Change \(L\) function</button></div>
-            <p class="medium">This website is the data companion to the paper <a href ="">Surfaces Associated to Zeros of Automorphic L-functions</a><a class="citation" href ="ref.html">[1]</a> by Debmayla Basak, Cruz Castillo and Alexandru Zaharescu. 
-              <br>
-              <br> In this website, you will find a description of our data, visualizations related to pair and triple correlation of the zeros of certain $L$-functions, and tables of moments.  Simply click on the corresponding tab above to see the data. For example, to the left is an animation of the discrete approximation of the Pair Correlation Surface.
-              <br>
-              <br> For example, see a discrete approximation of the Pair Correlation Surface to the left.
-              Our data makes heavy use of the zeros of $\zeta$ found on <a href = "https://www.lmfdb.org/zeros/zeta/">LMFDB</a><a class="citation" href ="ref.html">[2]</a> which were computed by Platt <a class = "citation" href="ref.html">[3]</a>. For the other $L$-functions, we required the use of Rubinstein's \(L\)-function calculator <a href ="https://github.com/agrawroh/l-calc">lcalc</a><a class="citation" href = "ref.html">[4]</a>. 
-              <br><br>
-             
-              </a>
-            </p>
-    
-          </div>
-          <div class="two">
-            <img class = "medium_pic" id = 'PCS' src="Images/PCS_zeta.gif">
-          </div>
-          <!-- Traces of  PCS-->
-          <div class="one"> 
-            <h2 class = "title2">The trace of the PCS at \(\alpha=1/2\) </h2>
-            <div class ="button_container"><p class = "large" id = "trace_text">Current L function: ζ(s)</p><button onclick ="switchtraceImage()" class = 'styled-button' >Change \(L\) function</button></div>
-            <p class="medium">This website is the data companion to the paper <a href ="">Surfaces Associated to Zeros of Automorphic L-functions</a><a class="citation" href ="ref.html">[1]</a> by Debmayla Basak, Cruz Castillo and Alexandru Zaharescu. 
-              <br>
-              <br> In this website, you will find a description of our data, visualizations related to pair and triple correlation of the zeros of certain $L$-functions, and tables of moments.  Simply click on the corresponding tab above to see the data. For example, to the left is an animation of the discrete approximation of the Pair Correlation Surface.
-              <br>
-              <br> For example, see a discrete approximation of the Pair Correlation Surface to the left.
-              Our data makes heavy use of the zeros of $\zeta$ found on <a href = "https://www.lmfdb.org/zeros/zeta/">LMFDB</a><a class="citation" href ="ref.html">[2]</a> which were computed by Platt <a class = "citation" href="ref.html">[3]</a>. For the other $L$-functions, we required the use of Rubinstein's \(L\)-function calculator <a href ="https://github.com/agrawroh/l-calc">lcalc</a><a class="citation" href = "ref.html">[4]</a>. 
-              <br><br>
-             
-              </a>
-            </p>
-    
-          </div>
-          <div class="two">
-            <img class = "medium_pic" id = 'trace' src="Images/half_zeta.png">
-          </div>
+<!-- The PCS -->
+<div class="one" id ="pcs"> 
+  <h2 class = 'title2'> The Pair Corrrelation Surface (PCS)</h2>
+  <p class ='medium'> In this box, we have an animation of the conjectured PCS for \(|\alpha|\leq 3.\) For the definition of PCS surface associated ot the zeros of \(L(s,\pi)\) see <a class ="citation" href = "ref.html">[1, Definition 1.2]</a>
+    <br>
+    <br>
+    The conjectured Pair Correlation Surface associated to the zeros of \(L(s, \pi)\) is the graph of the function \(g_{\pi} : \mathbb{R}^2 \to \mathbb{R}\) defined by
+    \begin{align}\label{PCS Equation}
+    g_{\pi}(\alpha, \lambda) = \frac{1}{\sqrt{2 \pi}} e^{- \frac{1}{2}\lambda^2}.
+    \end{align}
+  We invite the reader to compare this animation to the ones found in the box <b><a href = "PCS.html#PCS_dis" > Discrete approximations of the PCS.</a></b>
+  </p>
 
-          <!-- The PCS -->
-          <div class="one"> 
-            <h2 class = 'title2'> The Pair Corrrelation Surface (PCS)</h2>
-            
-    
-          </div>
-          <div class="two">
-            <img class = "medium_pic" id = 'PCS' src="Images/PCS.gif">
-          </div>
+</div>
 
-          <!--Small alpha of  PCS -->
-          <div class="one"> 
-            <h2 class = "title2">Distortion to the PCS </h2>
-            <div class ="button_container"><p class = "large" id = "smallpcs_text">Current L function: ζ(s)</p><button onclick =" switchsmallpcsImage()" class = 'styled-button' >Change \(L\) function</button></div>
-           
-             
-              </a>
-            </p>
-    
-          </div>
-          <div class="two">
-            <img class = "medium_pic" id = 'smallPCS' src="Images/Distortion_zeta.png">
-          </div>
+<div class="two">
+  <img class = "medium_pic" id = 'PCS' src="Images/PCS.gif">
+</div>
+<div class = "one">
+  <h2 class = "title2">Plots of \(\mathcal{S}_{SD}(m\alpha, T)\)</h2>
+  <div class ="button_container"><p class = "large" id = "SD_text">Current L function: ζ(s)</p><button onclick ="switchSDImage()" class = 'styled-button' >Change \(L\) function</button></div>
+  </div>
+  
+  <div class="two">
+    <img class = "medium_pic2" id = 'SD' src='Images/SD_zeta.png'>
+  </div>
+      <!--Smal-->
+      <div class="one" id = "dis"> 
+        <h2 class = "title2">Distortion to the PCS </h2>
+        <p class = "medium"> To the right, we are plotting the discrete approximation of the PCS when \(|\alpha|\leq .2\). Namely, we are plotting for each 
+          \(\alpha\) 500 density histograms generated from 
+          \begin{align*} \left\{ \mathcal{S}_{\pi} (\gamma_{\pi},T^{\alpha m},T): |\gamma_{\pi}| \leq T \hspace{.5em}  \mathrm{ and } \hspace{.5em} L\Big(\frac{1}{2}+i\gamma_{\pi}\Big) =0 \right\} \end{align*} 
+          with \(T\) being the ordinate of the millionth zero of \(L(s,\pi).\) 
+          As \(\alpha\) approaches \(0\), we see that in the graph the distribution is looking less normal in fact it is even becoming less symmetric(see the Tables tab for the values of some odd moments). 
+          This is a natural extension of what is seen with \(\mathcal{S}_{\mathrm{av},\pi}(T^{m\alpha},T)\) in <b> <a href="PCS.html#Avg" > \(\alpha = 1/2\).</a> </b> 
+         </p>
+
+        <div class ="button_container"><p class = "large" id = "smallpcs_text">Current L function: ζ(s)</p><button onclick =" switchsmallpcsImage()" class = 'styled-button' >Change \(L\) function</button></div>
+
+      </div>
+      <div class="two">
+        <img class = "medium_pic" id = 'smallPCS' src="Images/Distortion_zeta.png">
+      </div>
     </div>
+
+<!--SD -->
+       
+    
     <script src = "buttons.js"></script>
    </main>
 </html>
