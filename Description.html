@@ -51,12 +51,12 @@ For each \(L\)-function, we compute the following sets
 \end{equation}
 for many \(X.\) Recall, we define 
 \begin{align*}
-\mathcal{S}_{\pi}(X,T,\rho_{\pi}') := \sum_{|\text{Im} \rho_{\pi}'| \leq T} X^{\rho_{\pi}-\rho_{\pi'}}w(\rho_{\pi}-\rho_{\pi}')
+\mathcal{S}_{\pi}(X,T,\rho_{\pi}') := \sum_{|\text{Im} \rho_{\pi}| \leq T} X^{\rho_{\pi}-\rho_{\pi'}}w(\rho_{\pi}-\rho_{\pi}')
 \end{align*}
 
 We denote the standard deviation of this set by 
 \begin{equation}\label{def:SD}
-    \mathcal{S}_{\text{SD},\pi}(X,T):= \bigg(\frac{1}{N(T)}\sum_{|\rho_{\pi}|\leqslant T} \Big(\Re\mathcal{S}_{\pi}(X,T,\rho'_{\pi}) -\mathcal{S}_{\text{av},\pi}(X,T)\Big)^2\bigg)^{\frac{1}{2}}.
+    \mathcal{S}_{\text{SD},\pi}(X,T):= \bigg(\frac{1}{N(T)}\sum_{|\text{Im} \rho_{\pi}|\leqslant T} \Big(\Re\mathcal{S}_{\pi}(X,T,\rho'_{\pi}) -\mathcal{S}_{\text{av},\pi}(X,T)\Big)^2\bigg)^{\frac{1}{2}}.
 \end{equation}
 In general, we choose \(T\) be the ordinate of the millionth zero of the \(L\)-function: \(T \approx 600269\) for \(\zeta\), \(T \approx 319387\) for \(L(s,\Delta)\), and \(T \approx 273499\) for \(L(s,E)\).  The relevant statistics and graphs are then created for these sets. Explicitly, we compute 
 the mean, the standard deviation, various moments, a discrete approximation of the probability density function, and a discrete approximation of the PCS from these sets.
