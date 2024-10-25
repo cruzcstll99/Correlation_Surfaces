@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <script type="text/javascript"
-      src="LaTeXMathML.js">
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
     </script>
   </head>
   <body>
@@ -23,7 +24,41 @@
      <a href="Tables.html">Tables</a> 
      <a href="ref.html">References</a>
    </div>
-   <div class = "three">
-    <p class = "construct">COMING SOON</p>
+   <div class = "container">
+    <!-- Plots of F(m alpha, T) -->
+    <div class = "one" >
+      <h2 class = "title2">Triple Correlation and Laplace distribution</h2>
+      <p class ="medium"> A discrete approximation of the probability density function associated to 
+      \(\widehat{\mathcal{S}}_{\pi,\Psi}(X_1,X_2,T,\rho_{\pi})\) where \(L(s,\pi)=\zeta(s), X_1= T^{\frac{1}{2}}\) and \(X_2 = T^{\frac{2}{5}}\) in blue. 
+      The probability distribution of a Laplace distribution with mean zero and scaling parameter one in orange.</p>
+         
+    
+    </div>
+      <div class="two">
+        <img class = "medium_pic"  src="Images/Laplace.jpeg">
+      </div>
+      <div class = "one" >
+        <h2 class = "title2">Triple Correlation and Chi-square distribution</h2>
+        <p class ="medium"> A discrete approximation of the probability density function associated to 
+        \(\widehat{\mathcal{S}}_{\pi,\Psi}(X_1,X_2,T,\rho_{\pi})\) where \(L(s,\pi)=\zeta(s), X_1= T^{\frac{1}{2}}\) and \(X_2 = T^{\frac{1}{2}}\) in green.
+        The probability distribution of a Chi-squared distribution with two degrees of freedom in red.</p>
+           
+      
+      </div>
+        <div class="two">
+          <img class = "medium_pic"  src="Images/chi_square.jpeg">
+        </div>
+        <div class = "one" >
+          <h2 class = "title2">Triple Correlation and Chi-square distribution</h2>
+          <p class ="medium"> 
+            A discrete approximation of the probability density function associated to \(\widehat{\mathcal{S}}_{\pi,\Psi}(X_1,X_2,T,\rho_{\pi})\) 
+            where \(L(s,\pi)=\zeta(s), X_1= T^{\frac{1}{2}}\) and \(X_2=T^{\alpha_2}\) with \(\alpha_2\) varying between \( (0,1]\) in a discrete equi-spaced manner. 
+            This surface contains the previous two graphs as traces at \(\alpha_2 = .4\) and \(.5\), respectively.</p>
+          </div>
+          <div class="two">
+          <img class = "medium_pic"  src="Images/triple_correlation_240.png">
+          </div>
    </div>
+   
+</div>
 </html>
