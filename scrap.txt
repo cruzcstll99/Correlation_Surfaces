@@ -17,3 +17,4 @@
         
         </p></div>
     </div>
+    For \(\zeta,\) we also compute \(\mathcal{S}(\pi,X,T)\) for \(T\) being the imaginary part of the hundredth\((\approx 74920)\) and ten \((\approx 9877)\) thousandth zero.

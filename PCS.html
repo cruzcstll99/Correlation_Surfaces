@@ -33,6 +33,7 @@
         <div class ="button_container"><p class = "large" id = "L_text">Current L function: ζ(s)</p><button onclick ="switchL()" class = 'styled-button' >Change \(L\) function</button></div> </p>
         <p class = 'medium'>
        Clicking the button changes the visualizations to the that of the \(L\)-function that is listed. For example, above when you click the button it will change the \(L\)-function after "Current L function:".
+       It also maybe necessary to zoom out on the website if the visualizations do not fit on completely on the page.
         
         </p></div>
     </div>
@@ -54,8 +55,8 @@
           </p>
           <p class = 'medium'>From this conjecture, we expect that for \(\alpha\) not too 
             small  \(S_{\pi,\mathrm{av}}\) to behave linearly and then flatline for \(|\alpha| \geq 1\). For \(\alpha\) small the denominating term is second term of the first case above. 
-            When \(L(s,\pi) = \zeta(s)\) and \(T\) is the millionth zero of \(\zeta\)(\(\approx 600,270\)) this change of main term seems to happen around \(.2\) which can be seen in the graph. 
-            As expected, Montgomery's Theorem and heuristic approximates the behavior of \(S_{\textrm{av}}\) very well <a class = "citation">[5]</a>. The same can be said for the other \(\mathrm{GL}_2\) \(L\)-functions. 
+            When \(L(s,\pi) = \zeta(s)\) and \(T\) is the millionth zero of \(\zeta\)(\(\approx 600,270\)) this change of main term happens around \(.2\) as seen in the graph. 
+            As expected, Montgomery's Theorem and heuristic approximates the behavior of \(S_{\textrm{av}}\) very well <a class = "citation">[5]</a>. The same can be said for the \(\mathrm{GL}_2\) \(L\)-functions. 
            <br>
            <div class ="button_container"><p class = "large" id = "av_text">Current L function: ζ(s)</p><button onclick ="switchavImage()" class = 'styled-button' >Change \(L\) function</button></div>
           
@@ -70,21 +71,26 @@
   <h2 class = "title2">Discrete approximations of the Pair Correlation Surface(PCS) </h2>
   <p class="medium">
    In the box to the right, we present animations of the discrete approximations of the PCS generated from the first million zeros of \(\zeta(s),L(s,\Delta)\)and \(L(s,E).\) 
-   In each animation, we take \(.2 \leq |\alpha| \leq 3 \) for smaller \(\alpha\) see the box <a href="PCS.html#dis">Distortion to the PCS</a>. 
+   In each animation, we take \(.2 \leq |\alpha| \leq 3 \) for smaller \(\alpha\) see the box, <a href="PCS.html#dis">Distortion to the PCS</a>. 
    <br>
    <br>
   The animations have three dimensions: the \(\alpha\) dimension, the \(\lambda\) dimension, and the dimension corresponding to the approximation of probability distribution function associated to 
-   \begin{align*} \left\{ \mathcal{S}_{\pi} (\gamma_{\pi},T^{m\alpha},T): |\gamma_{\pi}| \leq T \hspace{.5em}  \mathrm{ and } \hspace{.5em} L\Big(\frac{1}{2}+i\gamma_{\pi}\Big) =0 \right\} \end{align*} 
+  </p>
+  <p class = "med1">
+  \begin{align*}
+   \bigg\{ \frac{\mathcal{S}_{\pi} (T^{m\alpha},T,\frac{1}{2}+\gamma_{\pi})-\mathcal{S}_{\pi,\text{av}}(T^{m \alpha},T)}{\mathcal{S}_{\pi,\text{SD}}(T^{m \alpha},T)}:& |\gamma_{\pi}| \leq T \hspace{1em} \text {and}  \hspace{1em} L\Big(\frac{1}{2}+i\gamma_{\pi}\Big) =0 \bigg\} 
+   \end{align*} 
+  </p>
+   <p class = "medium">
    with \(T\) being the ordinate of the millionth zero of \(L(s,\pi).\) 
-   For each fixed \(\alpha,\) we compute 500 histograms for the set above
-  normalized to have mean zero and standard deviation one. 
+   The set above is normalized to have mean zero and standard deviation 1. For each fixed \(\alpha,\) we compute 500 histograms for the set above. 
    We use \(\lambda\) to denote the bin location. 
    For a cleaner presentation, we delete the extreme outliers of this set, which corresponds to one percent of the data. 
    Combining all the \(\alpha\) traces, we create the animations to the left. 
-   Examples of the \(\alpha\) traces are displayed in the box <b> <a href="PCS.html#tra" > The trace of PCS at \(\alpha = 1/2\).</a> </b>
+   Examples of the \(\alpha\) traces are displayed in the box <b> <a href="PCS.html#tra" > The trace of PCS at \(\alpha = 1/2.\)</a> </b>
    <br>
    <br>
-   Finally, we invite the reader to compare these animations to the animation found in the box <b><a href="PCS.html#pcs">The Pair Correlation Surface(PCS).</a></b>
+   Finally, we invite the reader to compare these animations to the animation found in the box, <b><a href="PCS.html#pcs">The Pair Correlation Surface(PCS).</a></b>
   </p>
   <div class ="button_container"><p class = "large" id = "pcs_text">Current L function: ζ(s)</p><button onclick ="switchPCSImage()" class = 'styled-button' >Change \(L\) function</button></div>
  
@@ -98,9 +104,15 @@
   <h2 class = "title2">The trace of the PCS at \(\alpha=\frac{1}{2}\) </h2>
   
   <p class="medium"> To the right, are \(\alpha\) traces of the discrete approximations of the PCS when \(\alpha = \frac{1}{2}.\) Explicity, they are the plots of 500 density histograms generated from 
-    \begin{align*} \left\{ \mathcal{S}_{\pi} (\gamma_{\pi},T^{\frac{m}{2}},T): |\gamma_{\pi}| \leq T \hspace{.5em}  \mathrm{ and } \hspace{.5em} L\Big(\frac{1}{2}+i\gamma_{\pi}\Big) =0 \right\} \end{align*} 
+  </p>
+  <p class = "med1">
+    \begin{align*}
+     \bigg\{ \frac{\mathcal{S}_{\pi} (T^{m\alpha},T,\frac{1}{2}+\gamma_{\pi})-\mathcal{S}_{\pi,\text{av}}(T^{m \alpha},T)}{\mathcal{S}_{\pi,\text{SD}}(T^{m \alpha},T)}:& |\gamma_{\pi}| \leq T \hspace{1em} \text {and}  \hspace{1em} L\Big(\frac{1}{2}+i\gamma_{\pi}\Big) =0 \bigg\} 
+     \end{align*} 
+    </p>
+    <p class = 'medium'>
    with \(T\) being the ordinate of the millionth zero of \(L(s,\pi).\) We also plot the gaussian probability distribution function in red. 
-    
+  </p>
    
     </a>
   </p>
@@ -130,9 +142,25 @@
   <img class = "medium_pic" id = 'PCS' src="Images/PCS.gif">
 </div>
 <div class = "one">
-  <h2 class = "title2">Plots of \(\mathcal{S}_{SD}(m\alpha, T)\)</h2>
-  <div class ="button_container"><p class = "large" id = "SD_text">Current L function: ζ(s)</p><button onclick ="switchSDImage()" class = 'styled-button' >Change \(L\) function</button></div>
-  </div>
+  <h2 class = "title2">Plots of the standard deviation </h2>
+  
+  <p class = 'medium'> 
+    In this box, we plot the standard deviations of the \(S_{\pi}(T^{m\alpha},T,\rho_{\pi})\). We denote the standard deviation by 
+    \(S_{\pi,SD}(T^{m\alpha},T)\). In consideration of <a href ="ref.html" class = "citation">[1, eq. 3.11]</a> 
+    and <a href ="ref.html" class = "citation">[1, Lemma 3.3]</a>, 
+    we compare the computed standard deviation to the following estimates
+    \begin{align*}
+    \sqrt{\frac{\min\{1,\alpha\} m \log T}{4}}
+    \end{align*}
+    and
+    \begin{align*}
+    \sqrt{\frac{\min\{1,\alpha\} m \log T}{4}-(\min\{1,\alpha\})^2}.
+    \end{align*}
+    In the last estimate, we add in a lower order term. This inclusion comes from  <a href ="ref.html" class = "citation">[1, eq. 3.11]</a>. Just like with the averages, we see that the standard deviations flatline after \(\alpha \geq 1.\)
+    <div class ="button_container"><p class = "large" id = "SD_text">Current L function: ζ(s)</p><button onclick ="switchSDImage()" class = 'styled-button' >Change \(L\) function</button></div>
+  </p>
+ 
+</div>
   
   <div class="two">
     <img class = "medium_pic2" id = 'SD' src='Images/SD_zeta.png'>
@@ -140,12 +168,17 @@
       <!--Smal-->
       <div class="one" id = "dis"> 
         <h2 class = "title2">Distortion to the PCS </h2>
-        <p class = "medium"> To the right, we are plotting the discrete approximation of the PCS when \(|\alpha|\leq .2\). Namely, we are plotting for each 
-          \(\alpha\) 500 density histograms generated from 
-          \begin{align*} \left\{ \mathcal{S}_{\pi} (\gamma_{\pi},T^{\alpha m},T): |\gamma_{\pi}| \leq T \hspace{.5em}  \mathrm{ and } \hspace{.5em} L\Big(\frac{1}{2}+i\gamma_{\pi}\Big) =0 \right\} \end{align*} 
-          with \(T\) being the ordinate of the millionth zero of \(L(s,\pi).\) 
-          As \(\alpha\) approaches \(0\), we see that in the graph the distribution is looking less normal in fact it is even becoming less symmetric(see the Tables tab for the values of some odd moments). 
-          This is a natural extension of what is seen with \(\mathcal{S}_{\mathrm{av},\pi}(T^{m\alpha},T)\) in <b> <a href="PCS.html#Avg" > \(\alpha = 1/2\).</a> </b> 
+        <p class = "medium"> To the right, we are plotting discrete approximation of the PCS when \(|\alpha|\leq .2\). Namely, we are plotting for each 
+          \(\alpha,\) 500 density histograms generated from 
+        </p>
+        <p class = "med1">
+          \begin{align*}
+           \bigg\{ \frac{\mathcal{S}_{\pi} (T^{m\alpha},T,\frac{1}{2}+\gamma_{\pi})-\mathcal{S}_{\pi,\text{av}}(T^{m \alpha},T)}{\mathcal{S}_{\pi,\text{SD}}(T^{m \alpha},T)}:& |\gamma_{\pi}| \leq T \hspace{1em} \text {and}  \hspace{1em} L\Big(\frac{1}{2}+i\gamma_{\pi}\Big) =0 \bigg\} 
+           \end{align*} 
+          </p>
+          <p class ="medium">
+          As \(\alpha\) approaches \(0\), we see that in the graph the distribution is looking less normal, in fact, it is even becoming less symmetric(see the Tables tab for the values of some odd moments). 
+          This is a natural extension of the change of main term seen in the average, <b> <a href="PCS.html#Avg" >Plots of \(\mathcal{S}_{\mathrm{av},\pi}(T^{m\alpha}, T)\) </a> </b> 
          </p>
 
         <div class ="button_container"><p class = "large" id = "smallpcs_text">Current L function: ζ(s)</p><button onclick =" switchsmallpcsImage()" class = 'styled-button' >Change \(L\) function</button></div>

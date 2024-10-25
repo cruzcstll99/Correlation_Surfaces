@@ -45,6 +45,7 @@ function switchtraceImage() {
     document.getElementById('trace_text').innerHTML = L_funcs[currenttraceImage];
 }
 
+
 const smallpcs = ['Images/Distortion_zeta.png','Images/Distortion_Delta.png','Images/Distortion_E.png']
 let currentPCSImage  =0;
 function switchsmallpcsImage() {

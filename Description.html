@@ -42,26 +42,30 @@ which is a newform of weight 12 and level 1. The second one is \(L(s,E),\) where
 \begin{align*}
     E: y^2 +y = x^3-x.
 \end{align*}
-These \(L\)-functions were studied computationally by Katz and Sarnak in <a class = "citation" href ="ref.html">[3]</a>. For more information on the Elliptic curve, see <a href="https://www.lmfdb.org/EllipticCurve/Q/11/a/3">https://www.lmfdb.org/EllipticCurve/Q/11/a/3.</a> Additionally, these \(L\)-function are symmetric over the real line. To conduct our numerical experiments, we obtain the first million non-trivial zeros with positive ordinates of these \(L\)-functions. For \(\zeta\), we use the zeros computed by
-Platt <a class = "citation" href = "ref.html">[4]</a> available through <a href="https://www.lmfdb.org/zeros/zeta/Completeness">Zeros of \(\zeta(s)\)</a> <a  class = "citation" href="ref.html">[2]</a>. For the other \(L\)-functions, we use Rubinstein's lcalc package <a class = "citation" href ="ref.html">[5]</a> to compute their zeros. Although we do not use all the zeros computed by Platt, we remark that our data strongly reflects our conjectures.
+These \(L\)-functions were studied computationally by Katz and Sarnak in <a class = "citation" href ="ref.html">[3]</a>. For more information on the Elliptic curve, see <a href="https://www.lmfdb.org/EllipticCurve/Q/11/a/3" class = "blue">https://www.lmfdb.org/EllipticCurve/Q/11/a/3.</a> Additionally, these \(L\)-function's zeros are symmetric over the real line. To conduct our numerical experiments, we obtain the first million non-trivial zeros with positive ordinates of these \(L\)-functions. For \(\zeta\), we use the zeros computed by
+Platt <a class = "citation" href = "ref.html">[4]</a> available through <a href="https://www.lmfdb.org/zeros/zeta/Completeness" class = "blue">Zeros of \(\zeta(s)\)</a> <a  class = "citation" href="ref.html">[2]</a>. For the other \(L\)-functions, we use Rubinstein's lcalc package <a class = "citation" href ="ref.html">[5]</a> to compute their zeros. Although we do not use all the zeros computed by Platt, we remark that our data strongly reflects our conjectures.
 
 For each \(L\)-function, we compute the following sets 
 \begin{equation}\label{def:S(pi,X,T)}
-    S(\pi,X,T) := \{\Re\mathcal{S}_{\pi}(X,T,\rho_{\pi}'): -T \leqslant \Im \rho \leqslant T\}
+    \mathcal{S}(\pi,X,T) := \{\Re\mathcal{S}_{\pi}(X,T,\rho_{\pi}'): -T \leqslant \Im \rho \leqslant T\}
 \end{equation}
-for many \(X.\) 
-Additionally, we denote the standard deviation of \(S(\pi,X,T)\) by 
+for many \(X.\) Recall, we define 
+\begin{align*}
+\mathcal{S}_{\pi}(X,T,\rho_{\pi}') := \sum_{|\text{Im} \rho_{\pi}'| \leq T} X^{\rho_{\pi}-\rho_{\pi'}}w(\rho_{\pi}-\rho_{\pi}')
+\end{align*}
+
+We denote the standard deviation of this set by 
 \begin{equation}\label{def:SD}
     \mathcal{S}_{\text{SD},\pi}(X,T):= \bigg(\frac{1}{N(T)}\sum_{|\rho_{\pi}|\leqslant T} \Big(\Re\mathcal{S}_{\pi}(X,T,\rho'_{\pi}) -\mathcal{S}_{\text{av},\pi}(X,T)\Big)^2\bigg)^{\frac{1}{2}}.
 \end{equation}
-In general, we choose \(T\) be the ordinate of the millionth zero of the \(L\)-function: \(T \approx 600269\) for \(\zeta\), \(T \approx 319387\) for \(L(s,\Delta)\), and \(T \approx 273499\) for \(L(s,E)\). For \(\zeta,\) we also compute \(S(\pi,X,T)\) for \(T\) being the imaginary part of the hundredth\((\approx 74920)\) and ten \((\approx 9877)\) thousandth zero. The relevant statistics and graphs are then created for these sets. Explicitly, we compute 
-the mean, the standard deviation, various moments, a discrete approximation of the cumulative density function, and a discrete approximation of the PCS from these sets.
+In general, we choose \(T\) be the ordinate of the millionth zero of the \(L\)-function: \(T \approx 600269\) for \(\zeta\), \(T \approx 319387\) for \(L(s,\Delta)\), and \(T \approx 273499\) for \(L(s,E)\).  The relevant statistics and graphs are then created for these sets. Explicitly, we compute 
+the mean, the standard deviation, various moments, a discrete approximation of the probability density function, and a discrete approximation of the PCS from these sets.
 
-In this section, we slightly change our notation. When \(\pi\) is the trivial representation corresponding to \(\zeta\), we define for \(\rho'\) with \(\zeta(\rho') =0\)
+In this website, we slightly change our notation from the paper <a class = "citation" href ="ref.html">[1]</a>. When \(\pi\) is the trivial representation corresponding to \(\zeta\), we define for \(\rho'\) with \(\zeta(\rho') =0\)
 \begin{align*}\label{S_zeta}
-    S(X,T,\rho') := S_{\pi}(X,T,\rho').
+    \mathcal{S}(X,T,\rho') := \mathcal{S}_{\pi}(X,T,\rho').
 \end{align*}
-For the other \(L\)-functions, we replace the \(\pi\) in \(S_{\pi}(X,T,\rho')\) for the arithmetic object they are associated with, namely, \(\Delta\) and \(E.\) We follow the same changes for \(\mathcal{S}_{\text{av},\pi}(X,T), \mathcal{S}_{\text{SD},\pi}(X,T),\) and \(S(\pi,X,T).\) 
+For the other \(L\)-functions, we replace the \(\pi\) in \(S_{\pi}(X,T,\rho')\) for the arithmetic object they are associated with, specifically, \(\Delta\) and \(E.\) We follow the same changes for \(\mathcal{S}_{\text{av},\pi}(X,T), \mathcal{S}_{\text{SD},\pi}(X,T),\) and \(\mathcal{S}(\pi,X,T).\) 
         </div> 
 <div class = "container1"> 
   <h2 class = "title2"></h2>
