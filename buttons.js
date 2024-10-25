@@ -4,19 +4,19 @@ function changeImage()
     img.scr = '\Images\S_av_Delta_plot.png'
 }
 let cur_av_image =0;
-const av_images =['\Images\ave\S_av_plot.png','\Images\ave\S_av_Delta_plot.png']
+const av_images =['Images/S_av_plot.png','Images/S_av_Delta_plot.png'];
 function switch_avg_Image() {
     currentImage = (cur_av_image + 1) % av_images.length;
     document.getElementById('Avg').src = images[currentImage];
 }
+
+const avimages = ['Images/S_av_plot.png', 'Images/S_av_Delta_plot.png','Images/S_av_E_plot.png'];
+
+const L_funcs = ['Current L function: ζ(s)', 'Current L function: L(s,Δ)','Current L function: L(s,E)'];
 let currentavgImage = 0;
-const images = ['Images/S_av_plot.png', 'Images/S_av_Delta_plot.png','Images/S_av_E_plot.png'];
-
-const L_funcs = ['Current L function: ζ(s)', 'Current L function: L(s,Δ)','Current L function: L(s,E)']
-
-function switchavgImage() {
-    currentavgImage = (currentavgImage + 1) % images.length;
-    document.getElementById('Avg').src = images[currentavgImage];
+function switchavImage() {
+    currentavgImage = (currentavgImage + 1) % avimages.length;
+    document.getElementById('Average').src = avimages[currentavgImage];
     document.getElementById('av_text').innerHTML = L_funcs[currentavgImage];
 }
 
@@ -43,4 +43,17 @@ function switchtraceImage() {
     currenttraceImage = (currenttraceImage + 1) % tracepdfs.length;
     document.getElementById('trace').src = tracepdfs[currenttraceImage];
     document.getElementById('trace_text').innerHTML = L_funcs[currenttraceImage];
+}
+
+const smallpcs = ['Images/Distortion_zeta.png','Images/Distortion_Delta.png','Images/Distortion_E.png']
+let currentPCSImage  =0;
+function switchsmallpcsImage() {
+    currentPCSImage = (currentPCSImage + 1) % smallpcs.length;
+    document.getElementById('smallPCS').src = smallpcs[currentPCSImage];
+    document.getElementById("smallpcs_text").innerHTML = L_funcs[currentPCSImage];
+}
+let currrentLfunc = 0;
+function switchL() {
+    currrentLfunc = (currrentLfunc + 1) % L_funcs.length;
+    document.getElementById("L_text").innerHTML = L_funcs[currrentLfunc]
 }

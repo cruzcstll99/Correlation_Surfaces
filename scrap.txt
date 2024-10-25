@@ -5,4 +5,15 @@
     <img class = "medium_pic2" src="">
     <div class ="button_container"><p class = "large" id = "pcs_text">Current L function: ζ(s)</p>
     <button onclick ="switchImage()" class = 'styled-button' >Change \(L\) function</button></div>
-</div>
+</div> 
+<div class="five"> 
+      <h2 class = 'title2'>Tutorial</h2>
+      <p class = 'medium'>Below, you shall find various data visualizations generated from the zeros of \(\zeta,L(s,\Delta)\) and \(L(s,E)\). 
+        For the majority of the boxes below, you will find the following button.
+      </p>
+        <div class ="button_container"><p class = "large" id = "L_text">Current L function: ζ(s)</p><button onclick ="switchL()" class = 'styled-button' >Change \(L\) function</button></div> </p>
+        <p class = 'medium'>
+       Clicking the button changes the visualizations to the that of the \(L\)-function that is listed. For example, above when you click the button it will change the \(L\)-function after "Current L function:".
+        
+        </p></div>
+    </div>
