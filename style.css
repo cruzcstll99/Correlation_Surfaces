@@ -42,6 +42,12 @@
   height: 600px;
   border-radius: 7%;
 }
+.medium_pic3{
+  padding-left: 30px;
+  width: 700px;
+  height: 700px;
+  border-radius: 30%;
+}
 .large_pic{
   padding-left: 30px;
   width: 700px;
@@ -117,6 +123,9 @@ a:link, a:visited {
   text-align:left;
   font-family: Verdana;
   font-weight: bold;
+}
+.medium_pic3 {
+
 }
 .thmtext{
   text-align:left;
