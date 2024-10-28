@@ -46,7 +46,7 @@ function switchtraceImage() {
 }
 
 
-const smallpcs = ['Images/Distortion_zeta.png','Images/Distortion_Delta.png','Images/Distortion_E.png']
+const smallpcs = ['Images/PCS_zeta_small.gif','Images/PCS_delta_small.gif','Images/PCS_E_small.gif']
 let currentPCSImage  =0;
 function switchsmallpcsImage() {
     currentPCSImage = (currentPCSImage + 1) % smallpcs.length;
