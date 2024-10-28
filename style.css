@@ -124,6 +124,9 @@ a:link, a:visited {
   font-family: Verdana;
   font-weight: bold;
 }
+.boldt{
+  font-weight:bold;
+}
 .thmtext{
   text-align:left;
   font-family: Verdana;
