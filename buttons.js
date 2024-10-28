@@ -29,7 +29,7 @@ function switchSDImage() {
     document.getElementById('SD_text').innerHTML = L_funcs[currentSDImage];
 }
 
-const pcsgifs = ['Images/PCS_zeta.gif','Images/PCS_delta.gif','Images/PCS_E.gif'];
+const pcsgifs = ["Images/optimized/PCS_zeta.gif",'Images/optimized/PCS_delta.gif','Images/optimized/PCS_E.gif'];
 let currpcsgif = 0;
 function switchPCSImage() {
     currpcsgif = (currpcsgif + 1) % pcsgifs.length;
@@ -46,7 +46,7 @@ function switchtraceImage() {
 }
 
 
-const smallpcs = ['Images/PCS_zeta_small.gif','Images/PCS_delta_small.gif','Images/PCS_E_small.gif']
+const smallpcs = ['Images/optimized/PCS_zeta_small.gif','Images/optimized/PCS_delta_small.gif','Images/optimized/PCS_E_small.gif']
 let currentsmallPCSImage  =0;
 function switchsmallpcsImage() {
     currentsmallPCSImage = (currentsmallPCSImage + 1) % smallpcs.length;
