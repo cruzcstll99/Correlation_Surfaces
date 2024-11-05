@@ -207,6 +207,12 @@ a.blue {
 .two {
   padding-left: 15%;
 }
+.specialtwo{
+  padding-left: 15%;
+  text-align:center;
+  text-indent: 50px;
+}
+
 .box {
   width: 50%; /* Adjust width as needed */
   padding: 20px;

@@ -54,14 +54,22 @@
         As you can see, the surface appears to a bell curve led along Montgomery's $F(\alpha)$ function. For more information on the data, please see the description tab. 
         <br>
         <br> 
+        We also have data related to the triple correlation of zeros of $\zeta(s).$ 
+        Clicking the button to the right under the animation changes the animation to one of the analogous surface for the triple correlation. Here, we have a phase change at $\alpha = .5.$ The $\alpha$
+ traces morph from a Laplace distribution with mean 0 and scaling factor 1 to a Chi-squared distribution with two degrees of freedom. For more information on the data used to create the animation, please see the description tab.
+ <br>
+ <br>     
+
           Finally, the second author would like to acknowledge his support from the National Science Foundation Graduate Research Fellowship Program under the Grant No. DGE 21-46756.
         </a>
       </p>
 
     </div>
-    <div class="two" >
-      <img class="medium_pic3" src="Images/PCSv3.gif">
+    <div class="specialtwo" >
+      <img class="medium_pic3" id = 'intro_pic' src='Images/PCSv3.gif'>
+      <button onclick ="switchintro()" class = 'styled-button' ><p id ="intro_text">Pair Correlation</p></button>
     </div>
+    <script src = "buttons.js"></script>
 </main>
 
 </html>

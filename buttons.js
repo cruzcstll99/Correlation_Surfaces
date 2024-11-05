@@ -58,3 +58,13 @@ function switchL() {
     currrentLfunc = (currrentLfunc + 1) % L_funcs.length;
     document.getElementById("L_text").innerHTML = L_funcs[currrentLfunc]
 }
+
+const intro_gifs = ['Images/PCSv3.gif','Images/TCS_Trace.gif'];
+const intro_text =['Pair Correlation', 'Triple Correlation'];
+let curcor = 0;
+
+function switchintro() {
+    curcor = (curcor +1) % intro_gifs.length;
+    document.getElementById("intro_text").innerHTML = intro_text[curcor];
+    document.getElementById("intro_pic").src = intro_gifs[curcor];
+}
