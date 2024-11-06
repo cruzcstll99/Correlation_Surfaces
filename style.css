@@ -279,6 +279,21 @@ body{
   transition: background-color 0.3s, transform 0.2s;
   margin-left: 30%;
 }
+.styled-button2 {
+  background-color: #2c1bcc; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-left: 5%;
+}
 
 .styled-button:hover {
   background-color: #d18e35; /* Darker green */
