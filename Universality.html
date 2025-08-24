@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+        <script src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>
+      $(function () {
+        // Make *any* div with class 'compute' a Sage cell
+        sagecell.makeSagecell({
+          inputLocation: "div.compute",
+          template: sagecell.templates.minimal,
+          evalButtonText: "Launch the Interactive Applet Now",
+        });
+      });
+    </script><script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+        svg: {
+          fontCache: "global",
+        },
+      };
+    </script><script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    </head>
+    <body>
+        <div class = "titlebox">
+        <h1 class = "title"> The Pair Correlation Surface Associated to Zeros of Elliptic Curves</h1>
+        </div>
+        <div class="topnav">
+     <a  href="index.html">Home</a>
+     <a href="Description.html">Description</a>
+     <a href="PCS.html">Pair Correlation</a>
+     <a  href="TCS.html">Triple Correlation</a> 
+     <a href="Tables.html">Tables</a> 
+     <a  class="active" href="Universality.html">Interactive </a>
+     <a href="ref.html">References</a>
+     
+     
+   </div>
+    </body>
+<main>
+    <div class="five"> 
+      <h2 class = 'title2'>Description</h2>
+      <p class = 'medium'>In this interactive website, you will see the approximations to the Pair Correlation Surfaces for the elliptic curve of your choosing. Recall that an elliptic curve is defined by its Weierstrass equation:
+         \[y^2 +a_1xy+a_3y = x^3+a_2x^2+a_4x+a_6.\]
+         In the first widget, you be able to choose your Weierstrass coefficients and see the graph of the corresponding elliptic curve. 
+      </p>
+      <div class="compute"><!--Do not make this indented;it will fail.--><script type="text/x-sage">
+@interact
+def E(a1=input_box(0,label = r"$a_1$"),
+      a3=input_box(0,label = r"$a_3$"),
+      a2=input_box(1,label = r"$a_2$"),
+      a4=input_box(-1, label = r"$a_4$"),
+      a6=input_box(0, label = r"$a_6$")):
+    coeffs = [a1,a3,a2,a4,a6]
+    C = EllipticCurve(coeffs).plot(xmin=-4, xmax=4, ymin=-3, ymax=3, title = "Graph of the Elliptic Curve" )
+    show(C)
+    return EllipticCurve([a1,a3,a2,a4,a6])
+</script></div>
+    </div>
+    
+<div class="five"> 
+      <h2 class = 'title2'>Computing Zeros </h2>
+      <p class = 'medium'>
+        Below, you can see how long it takes to compute zeros of $L$-function associated to your Elliptic Curve. If it takes too long, it might be a good idea to choose another elliptic curve. 
+        <p class = 'italic'>Please unclick the Compute button before changing any of the \(a_i\).  </p>
+      </p>
+      <div class="compute">import time as time
+@interact()
+def z(a1=input_box(0,label = r"$a_1$"),
+      a3=input_box(0,label = r"$a_3$"),
+      a2=input_box(1,label = r"$a_2$"),
+      a4=input_box(-1, label = r"$a_4$"),
+      a6=input_box(0, label = r"$a_6$"), 
+     compute = checkbox(default=False,label="Compute")):
+    coeffs = [a1,a3,a2,a4,a6]
+    if compute == True:
+        print("The first 2000 zeros of the L(s,E) are being computed.\n")
+        start = time.time()
+        zz = EllipticCurve([a1,a3,a2,a4,a6]).lseries().zeros(2000)
+        end = time.time()
+        print("It took {} seconds to compute the first 2000\n".format(end-start))
+        print("Here are the last ten zeros:")
+        print(zz[1989:1999]) 
+        return zz[1989:1999]
+       
+    return</div>
+</div>
+<div class="five"> 
+      <h2 class = 'title2'>Computing the Approximation to the PCS </h2>
+      <p class = 'medium'>
+Now that you have chosen your elliptic curve, you may compute the approximation of the Pair Correlation Surface using the zeros of $L(s,E).$ We take 30 $\alpha$-values uniformly spaced between $0.5$ and $.75.$
+        <p class = 'italic'>Please unclick the Compute button before changing any of the \(a_i\). </p>
+      </p>
+      <div class="compute">
+import numpy as np
+import random
+import time 
+def montgomery_weight_gpu(z):
+    return 4/(4+np.multiply(z,z))
+def G_zeta_real_cupy(zeros_diff,alpha,max_zero,w = montgomery_weight_gpu,deg =1):##include the T dependence
+    f = np.log(max_zero)                        ### log(x) = alpha * log(T)
+    return float(np.dot(np.cos(deg*alpha*f*zeros_diff),(w(zero_diff))))
+def G_zeta_real_various_alpha(zeros_diff,alphas,max_zero,mydic,w = montgomery_weight_gpu, deg =1):##include the T dependence
+    ### Need to make sure you have you dictionary already defined
+    zeros_diff = np.asarray(zeros_diff) 
+    w_array = w(zeros_diff)
+    f = np.log(max_zero)*zeros_diff
+    for alpha in alphas:
+        mydic[alpha].append(float(np.dot(np.cos(deg*alpha*f),w_array)))
+    return 
+def binned_points(data, percent, bins, Length = 2000):
+    data.sort()
+    d_terms = int((percent*Length)/2) ## Indicies to delete the tail(with probability percent/2)
+    trun_data = data[d_terms:Length-d_terms]
+    p,x = np.histogram(trun_data,bins,density = True)
+    return (p,x)
+def points_to_plot(data, percent, bins):
+    points = []
+    keys = data.keys()
+    for key in keys:
+        p,x = binned_points(data[key],percent,bins)
+        for i in range(bins):
+            points.append((float(key),x[i],p[i])) 
+    return points
+@interact()
+def PCS(a1=input_box(0,label = r"$a_1$"),
+      a3=input_box(0,label = r"$a_3$"),
+      a2=input_box(1,label = r"$a_2$"),
+      a4=input_box(-1, label = r"$a_4$"),
+      a6=input_box(0, label = r"$a_6$"), 
+     compute = checkbox(default=False,label="Compute")):
+    coeffs = [a1,a3,a2,a4,a6]
+    if compute == True:
+        print("The first 2000 zeros of L(s,E) are being computed.")
+        start = time.time()
+        zz = EllipticCurve([a1,a3,a2,a4,a6]).lseries().zeros(2000)
+        zz = np.array([float(zero) for zero in zz])
+        end = time.time()
+        print("It took {} seconds to compute the first 2000 zeros, and now the PCS is being computed.".format(end-start))
+        alphas = np.linspace(.5,.75,30)
+        start = time.time()
+        S_values = {alpha:[] for alpha in alphas}
+        for zero in zz:
+            G_zeta_real_various_alpha(zz-zero,alphas,zz[-1],S_values, deg =2)
+        end = time.time()
+        print("It took {} seconds to compute the random variables. Now, we are plotting approximation to the PCS from E.".format(end-start))
+        start = time.time()
+        sorted_S_values = dict(sorted(S_values.items()))
+        s_values = {float(key): S_values[key] for key in list(sorted_S_values.keys())}
+        s_values_normalized = {key: (s_values[key]-np.mean(s_values[key]))/np.std(s_values[key]) for key in s_values.keys()}
+        points2 = points_to_plot(s_values_normalized,0.01,50)
+        x = [i[0] for i in points2]
+        y = [i[1] for i in points2]
+        z = [i[2] for i in points2]
+        end = time.time()
+        cmaps = ['viridis', 'plasma', 'inferno', 'magma', 'cividis']
+        import matplotlib.pyplot as plt
+        fig = plt.figure(figsize = (2,2.25), dpi = 500 )
+        ax = fig.add_subplot(projection='3d')
+        scatter = ax.scatter(x,y,z, "--.", s=.25, c=z, cmap =random.choice(cmaps))
+        ax.set_ylabel(r"$\lambda$")
+        ax.set_xlabel("α",rotation='horizontal')
+        plt.show()
+        return 
+    return
+        </div>
+</main>
+
+</html>
